@@ -1,6 +1,8 @@
 import sqlite3
 import hashlib
 import datetime
+import json
+import app
 
 user_db_file_location = "database_file/users.db"
 note_db_file_location = "database_file/notes.db"
@@ -150,9 +152,6 @@ def delete_image_from_db(image_uid):
 
     _conn.commit()
     _conn.close()
-
-
-
 
 
 
