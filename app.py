@@ -9,9 +9,9 @@ from werkzeug.utils import secure_filename
 
 
 
+
 app = Flask(__name__)
 app.config.from_object('config')
-
 
 
 @app.errorhandler(401)
@@ -33,8 +33,6 @@ def FUN_405(error):
 @app.errorhandler(413)
 def FUN_413(error):
     return render_template("page_413.html"), 413
-
-
 
 
 
@@ -65,6 +63,7 @@ def FUN_private():
     else:
         return abort(401)
 
+# admin route
 @app.route("/admin/")
 def FUN_admin():
     if session.get("current_user", None) == "ADMIN":
